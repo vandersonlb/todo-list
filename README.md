@@ -1,2 +1,2 @@
 # To-Do List
-Projeto final do curso JavaScript antes de Framework.
+Projeto final do curso _JavaScript antes de Framework_.
