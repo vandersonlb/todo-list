@@ -45,7 +45,7 @@ function updateStorage(storage){
 
 function loadStorage(storage) {
   var taskStorage = JSON.parse(localStorage.getItem('tasks'))
-  if(taskStorage) taskStorage.forEach(item => addTask(item));
+  taskStorage && taskStorage.forEach(item => addTask(item));
 }
 
 loadStorage(localStorage)
