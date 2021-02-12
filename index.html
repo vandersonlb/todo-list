@@ -7,10 +7,16 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="date" name="" id="">
-  <input type="time" name="" id="">
-  <button>CLICK-ME</button>
-  <button id="mostra">MOSTRA</button>
-  <script type="module" src="main.js"></script>
+  <form id="task_form">
+    <input type="text" name="task_input" id="task_input" required>
+    <input type="date" name="date_input" id="date_input" required>
+  </form>
+  <button id="add_task">ADD TASK</button>
+  <button id="show_task_list">SHOW TASK LIST MODEL</button>
+  <p id="task_list" style="border: 1px solid black; width: 100%; min-height: 150px;"></p>
+
+  <!-- <script type="module" src="main.js"></script> -->
+  <!-- <script type="module" src="./Controller/TaskController.js"></script> -->
+  <script type="module" src="./main_TESTE.js"></script>
 </body>
 </html>
