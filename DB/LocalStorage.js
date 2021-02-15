@@ -1,7 +1,7 @@
 //"use strict";
 
 import Task from "../Model/Task.js";
-import TaskView from "../View/TaskView.js";
+//import TaskView from "../View/TaskView.js";
 
 class LocalStorage {
   constructor(){
@@ -16,8 +16,8 @@ class LocalStorage {
 
   static refreshDB(taskList) {
     //console.log(_taskView, 6666)
-    var taskListDB = taskList.map((task, index) => {
-      task.id = index;
+    var taskListDB = taskList.map(task => {
+      // task.id = index;
       task.done = Boolean(Math.round(Math.random()*1)); //DDDD EEE LLL EEE TTT AAA RRR
       return task
     })
@@ -26,9 +26,10 @@ class LocalStorage {
     console.log('Local storage atualizado com sucesso');
     //TaskView.refreshView(taskListDB);
   }
-  
+
+  /*
   static deleteTaskDB(evt) {
-    let id = evt.target.parentElement.id;
+    var id = evt.target.parentElement.id;
     var x = LocalStorage.getTaskDB();
     x.splice(id,1)
     // console.log(evt.target.parentElement.id);
@@ -37,10 +38,9 @@ class LocalStorage {
     //localStorage.getTasksDB().forEach(task => taskList.addTask(task))
     //taskList.getList.splice(id,1); //SERÁ QUE VALE A PENA ATUALIZAR O MODEL LIST??? //AQUI O MODEL LIST FICA DIFERENTE DO DB NOS IDS
 
-    /******* SÓ ATUALIZA O DB E A LISTA FICA ERRADA *******/
-  
     TaskView.refreshView(x);
   }
+  */
 }
 
 export default LocalStorage
