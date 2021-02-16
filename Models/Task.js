@@ -1,14 +1,14 @@
 //"use strict";
 
 class Task {
-  constructor(task, date, id=0, done=false) {
-    this._task = task;
+  constructor(name, date, id, done=false) {
+    this._name = name;
     this._date = date;
     this._id = id;
     this._done = done;
   }
 
-  get task() { return this._task; }
+  get name() { return this._name; }
 
   get date() { return this._date; }
 

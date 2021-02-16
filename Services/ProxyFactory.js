@@ -6,7 +6,7 @@ class ProxyFactory {
       get: function(target, prop, receiver) {
         if(methods.includes(prop) && target[prop] instanceof Function){ 
           return function(){
-            //console.log("INTERCEPTADO")
+            // console.log(`Método ${prop} interceptado em ${target.constructor.name}`)
             let Return = Reflect.apply(target[prop], target, arguments)
             run(prop);
             return Return

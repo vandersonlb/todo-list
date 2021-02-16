@@ -5,44 +5,24 @@ import TaskList from "../Models/TaskList.js";
 import LocalStorage from "../DB/LocalStorage.js";
 import TaskView from "../Views/TaskView.js";
 import ProxyFactory from "../Services/ProxyFactory.js"
-//import Bind from "../Helpers/Bind.js"
 
 class TaskController {
   constructor() {
     this._taskForm = document.querySelector("#task_form");
     this._addTaskButton = document.querySelector("#add_task");
-    //this._deleteTaskButton = document.querySelector("#delete_task");
-    this._taskListContainer = document.querySelector("#task_list"); //É NECESSARIO????
-
-    // this._self = this;
-    //this._taskDone = document.querySelector("#task_done");
 
     this._showTaskListButton = document.querySelector("#show_task_list"); //DESNECESSARIO TOTAL!!!!
-
-    this._taskView = new TaskView(); //É NECESSÁRIO????
-
-    //this._taskList = new TaskList();
-    
+   
     this._taskList = ProxyFactory.create(
       new TaskList(),
-      ["refreshList", "taskDone"],
+      ["createTaskID", "taskDone"],
       function () {
-        taskController._taskView.update(taskController._taskList.getList, [taskController.deleteTask, taskController.taskDone])
+        TaskView.update(taskController._taskList.getList, [taskController.deleteTask, taskController.taskDone])
         LocalStorage.refreshDB(taskController._taskList.getList);
       }
     );
-    
 
-    /*
-    this._taskList = new Bind(
-      new TaskList(),
-      new TaskView(),
-      //[taskController.deleteTask, taskController.taskDone],
-      ["refreshList", "taskDone"]
-    );
-    */
-
-    this._taskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]); //TALVEZ AQUI VAI TER Q ENTRAR NO PROXY
+   TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]); //TALVEZ AQUI VAI TER Q ENTRAR BBIINNDD
   }
 
   addTask() {
@@ -51,6 +31,7 @@ class TaskController {
     //console.log(this._taskListContainer)
 
     this._taskList.addTask(new Task(task, date));
+    TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]);
     //this._taskView.refreshView(this._taskListContainer, this._taskList.getList, [this.deleteTask, this.taskDone]);
     //LocalStorage.refreshDB(this._taskList.getList); //TALVEZ AQUI VAI TER Q ENTRAR NO PROXY
 
@@ -69,20 +50,20 @@ class TaskController {
     */
   }
 
-  deleteTask(id) {
-    //console.log(taskController._taskList.getList)
-    taskController._taskList.deleteTask(id)
-    // taskController._taskView.refreshView(taskController._taskListContainer, taskController._taskList.getList, [taskController.deleteTask, taskController.taskDone])
-    // LocalStorage.refreshDB(taskController._taskList.getList);
+  deleteTask(evt) {
+    let id = evt.target.parentNode.id
+    taskController._taskList.deleteTask(id);
+    //taskController._taskView.update(taskController._taskList.getList, [taskController.deleteTask, taskController.taskDone]);
+    //console.log(id)
   }
 
-  taskDone(id) {
+  taskDone(evt) {
+    let id = evt.target.parentNode.id
     taskController._taskList.taskDone(id);
     // taskController._taskView.refreshView(taskController._taskListContainer, taskController._taskList.getList, [taskController.deleteTask, taskController.taskDone])
     // LocalStorage.refreshDB(taskController._taskList.getList);
-
-
   }
+
 }
 
 let taskController = new TaskController();
