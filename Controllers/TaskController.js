@@ -2,9 +2,10 @@
 
 import Task from "../Models/Task.js";
 import TaskList from "../Models/TaskList.js";
-import LocalStorage from "../DB/LocalStorage.js";
+// import LocalStorage from "../DB/LocalStorage.js";
 import TaskView from "../Views/TaskView.js";
-import ProxyFactory from "../Services/ProxyFactory.js"
+// import ProxyFactory from "../Services/ProxyFactory.js";
+import Bind from "../Helpers/Bind.js";
 
 class TaskController {
   constructor() {
@@ -12,17 +13,15 @@ class TaskController {
     this._addTaskButton = document.querySelector("#add_task");
 
     this._showTaskListButton = document.querySelector("#show_task_list"); //DESNECESSARIO TOTAL!!!!
-   
-    this._taskList = ProxyFactory.create(
+
+    this._taskList = new Bind(
       new TaskList(),
-      ["createTaskID", "taskDone"],
-      function () {
-        TaskView.update(taskController._taskList.getList, [taskController.deleteTask, taskController.taskDone])
-        LocalStorage.refreshDB(taskController._taskList.getList);
-      }
+      TaskView,
+      [this.deleteTask, this.taskDone],
+      "createTaskID", "taskDone"
     );
 
-   TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]); //TALVEZ AQUI VAI TER Q ENTRAR BBIINNDD
+    //TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]); //TALVEZ AQUI VAI TER Q ENTRAR BBIINNDD
   }
 
   addTask() {
@@ -51,23 +50,22 @@ class TaskController {
   }
 
   deleteTask(evt) {
-    let id = evt.target.parentNode.id
+    let id = evt.target.parentNode.id;
     taskController._taskList.deleteTask(id);
     //taskController._taskView.update(taskController._taskList.getList, [taskController.deleteTask, taskController.taskDone]);
     //console.log(id)
   }
 
   taskDone(evt) {
-    let id = evt.target.parentNode.id
+    let id = evt.target.parentNode.id;
     taskController._taskList.taskDone(id);
     // taskController._taskView.refreshView(taskController._taskListContainer, taskController._taskList.getList, [taskController.deleteTask, taskController.taskDone])
     // LocalStorage.refreshDB(taskController._taskList.getList);
   }
-
 }
 
 let taskController = new TaskController();
 
 export function currentInstance() {
-    return taskController;
+  return taskController;
 }
