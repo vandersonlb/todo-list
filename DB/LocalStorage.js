@@ -1,6 +1,7 @@
 //"use strict";
 
 import Task from "../Models/Task.js";
+import DateHelper from "../Helpers/DateHelper.js"
 
 class LocalStorage {
   constructor() {
@@ -9,7 +10,7 @@ class LocalStorage {
 
   static getTaskDB() {
     let actualDB = JSON.parse(localStorage.getItem("tasksDB")) || [];
-    return actualDB.map((task) => new Task(task._name, task._date, task._id, task._done));
+    return actualDB.map((task) => new Task(task._name, new Date(task._date), task._id, task._done));
   }
 
   static refreshDB(taskList) {

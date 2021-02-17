@@ -6,6 +6,7 @@ import TaskList from "../Models/TaskList.js";
 import TaskView from "../Views/TaskView.js";
 // import ProxyFactory from "../Services/ProxyFactory.js";
 import Bind from "../Helpers/Bind.js";
+import DateHelper from "../Helpers/DateHelper.js";
 
 class TaskController {
   constructor() {
@@ -26,10 +27,12 @@ class TaskController {
 
   addTask() {
     let task = this._taskForm.task_input.value;
-    let date = this._taskForm.date_input.value; //AQUI TEM Q FAZER O DATE HELPER
-    //console.log(this._taskListContainer)
+    let date = this._taskForm.date_input.value;
+    let time = this._taskForm.time_input.value;
+    
+    DateHelper.stringToDate(date, time);
 
-    this._taskList.addTask(new Task(task, date));
+    this._taskList.addTask(new Task(task, DateHelper.stringToDate(date, time)));
     TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]);
     //this._taskView.refreshView(this._taskListContainer, this._taskList.getList, [this.deleteTask, this.taskDone]);
     //LocalStorage.refreshDB(this._taskList.getList); //TALVEZ AQUI VAI TER Q ENTRAR NO PROXY
@@ -47,6 +50,9 @@ class TaskController {
       console.log('Preencher todos os campos!!!')
     }
     */
+
+  //  this._taskForm.reset();
+    
   }
 
   deleteTask(evt) {

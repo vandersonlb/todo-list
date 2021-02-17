@@ -10,21 +10,21 @@ class TaskView {
     let list = document.createElement("ul");
     container.innerHTML = "";
 
-    if (taskList.length) {
-      taskList.forEach(task => {
-        let item = TaskView.createItem(task, actions);
-        list.appendChild(item);
-      });
+    taskList.forEach((task) => {
+      let item = TaskView.createItem(task, actions);
+      list.appendChild(item);
+    });
 
-      container.appendChild(list);
-    }
+    container.appendChild(list);
   }
 
   static createItem(task, actions) {
+    //let options = {day: 'numeric', month: ('long'), year: 'numeric', hour: 'numeric', minute: 'numeric'} //
+    //let options = {dateStyle: ('long'), timeStyle: ('short')} //('full' || 'long' || 'medium' || 'short' )
     let li = document.createElement("li");
     li.setAttribute("id", task.id);
     li.classList.toggle("teste", task.done);
-    li.innerHTML = `${task.name} ||| ${task.date}`;
+    li.innerHTML = `${task.name} ||| ${task.date.toLocaleString('pt-BR', {dateStyle: ('long'), timeStyle: ('short')})}`;
     li.appendChild(TaskView.createDeleteButton(actions[0]));
     li.appendChild(TaskView.createDoneButton(actions[1]));
 

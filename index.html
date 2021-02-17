@@ -13,14 +13,16 @@
 </head>
 <body>
   <form id="task_form">
-    <input type="text" name="task_input" id="task_input" required>
-    <input type="date" name="date_input" id="date_input" required>
+    <input type="text" name="task_input" id="task_input">
+    <input type="text" name="date_input" id="date_input" maxlength="10" inputmode="numeric" placeholder="DD/MM/YYYY">
+    <input type="text" name="time_input" id="time_input" maxlength="5" inputmode="numeric" placeholder="HH:MM">
   </form>
   <button id="add_task">ADD TASK</button>
   <button id="show_task_list">SHOW TASK LIST MODEL</button>
   <button id="task_done">DONE</button>
   <p id="task_list" style="border: 1px solid black; width: 100%; min-height: 150px;"></p>
 
-  <script type="module" src="./main.js"></script>
+  <script src="./src/js/maskDatetime.js"></script>
+  <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>
