@@ -13,8 +13,6 @@ class TaskController {
     this._taskForm = document.querySelector("#task_form");
     this._addTaskButton = document.querySelector("#add_task");
 
-    this._showTaskListButton = document.querySelector("#show_task_list"); //DESNECESSARIO TOTAL!!!!
-
     this._taskList = new Bind(
       new TaskList(),
       TaskView,
@@ -22,7 +20,6 @@ class TaskController {
       "createTaskID", "taskDone"
     );
 
-    //TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]); //TALVEZ AQUI VAI TER Q ENTRAR BBIINNDD
   }
 
   addTask() {

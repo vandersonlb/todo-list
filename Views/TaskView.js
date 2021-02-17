@@ -8,25 +8,49 @@ class TaskView {
   static update(taskList, actions) {
     let container = document.querySelector("#task_list");
     let list = document.createElement("ul");
+    let group = this.groupDates(taskList);
     container.innerHTML = "";
 
-    taskList.forEach((task) => {
-      let item = TaskView.createItem(task, actions);
-      list.appendChild(item);
-    });
+    group.forEach((date) => {
+      let dateLabel = this.createLabel(date);
+      list.appendChild(dateLabel);
+      taskList.forEach((task) => {
+        if(date === task.date.toLocaleString('pt-BR', {dateStyle: ('long')})) {
+          let item = this.createItem(task, actions);
+          list.appendChild(item);
+        }
+      });
+    })
 
     container.appendChild(list);
   }
 
+  static createLabel(date) {
+    let label = document.createElement("h3");
+    label.innerText = date;
+    
+    return label;
+  }
+
+  static groupDates(taskList) {
+    let filteredList = [];
+    
+    taskList.filter((task) => {
+      let dateString = task.date.toLocaleString('pt-BR', {dateStyle: ('long')})
+      if(!filteredList.includes(dateString))
+        filteredList.push(dateString)
+    })
+
+    return filteredList
+  }
+
   static createItem(task, actions) {
-    //let options = {day: 'numeric', month: ('long'), year: 'numeric', hour: 'numeric', minute: 'numeric'} //
-    //let options = {dateStyle: ('long'), timeStyle: ('short')} //('full' || 'long' || 'medium' || 'short' )
     let li = document.createElement("li");
     li.setAttribute("id", task.id);
     li.classList.toggle("teste", task.done);
-    li.innerHTML = `${task.name} ||| ${task.date.toLocaleString('pt-BR', {dateStyle: ('long'), timeStyle: ('short')})}`;
-    li.appendChild(TaskView.createDeleteButton(actions[0]));
-    li.appendChild(TaskView.createDoneButton(actions[1]));
+    li.innerHTML = `${task.date.toLocaleString('pt-BR', {timeStyle: ('short')})} ||| ${task.name}`;
+    li.appendChild(this.createDeleteButton(actions[0]));
+    li.appendChild(this.createDoneButton(actions[1]));
 
     return li;
   }
