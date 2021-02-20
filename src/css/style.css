@@ -1,0 +1,217 @@
+/** VARIÁVEIS **/
+
+:root {
+  --bg-color: #D7D5DE;
+  --text-color: #535353;
+  --borders : #A8A8A8;
+  --primary-color: #41b76d;
+  --secondary-color: #938ea6;
+}
+
+/** RESET **/
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/** BASE **/
+
+html {
+  font-family: "myriad-pro", sans-serif;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  padding: 1rem;
+}
+
+#app {
+  width: 26.25rem;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-radius: 0.6rem;
+  padding: 1.25rem 1.75rem;
+}
+
+/** HEADER **/
+
+.titulo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+#task_form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.task_input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--borders);
+  padding: 0.25rem;
+  font-size: 1.15rem;
+  margin: 0.8rem 0 1.2rem 0;
+}
+
+.task_input:focus {
+  box-shadow: 0 0 0 0;
+  border-bottom: 1.5px solid green;
+  outline: 0;
+}
+
+.input_group {
+  width: 0;
+  position: relative;
+  flex-grow: 1;
+  margin-right: 0.7rem;
+}
+
+.input_group.date {
+  flex-grow: 6;
+}
+
+.input_group.time {
+  flex-grow: 4;
+}
+
+.input_group .material-icons{
+  position: absolute;
+  top: 0.5rem;
+  right: 0.625rem;
+  font-size: 1.125rem;
+  opacity: 0.8;
+}
+
+#date_input, #time_input {
+  width: 100%;
+  border-radius: 0.4rem;
+  border: 1px solid var(--borders);
+  padding: 0.5rem 0.7rem;
+}
+
+#date_input:focus, #time_input:focus {
+  box-shadow: 0px 0px 4px var(--primary-color);
+  border-color: green;
+  outline: 0;
+}
+
+#add_task {
+  border-radius: 0.4rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+  padding: 0 0.9rem;
+}
+
+#add_task:disabled {
+  opacity: 0.5;
+}
+
+/** CARDS **/
+
+.titulo_card {
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.task_group {
+  width: 100%;
+  margin: 1.25rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.task_item.hour {
+  opacity: 0.75;
+  margin-right: 0.6rem;
+}
+
+input[type="checkbox"] {
+  all: unset;
+  margin-right: 0.8rem;
+  min-width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--borders);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+input:checked[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.task_item.text {
+  flex-grow: 1;
+  margin-right: 0.9rem;
+}
+
+.done {
+  color: var(--secondary-color);
+  text-decoration: line-through;
+}
+
+.close_btn {
+  font-size: 4rem;
+  appearance: none;
+  border: none;
+  background-color: var(--text-color);
+  opacity: 0.4;
+  padding: 0.09rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.material-icons.close_btn {
+  color: #fff;
+  font-size: 0.7rem;
+}
+
+@media only screen and (max-width: 420px) {
+  
+  #app {
+    width: 100%;
+  }
+
+  .titulo, .titulo_card {
+    font-size: 1.2rem;
+  }
+}

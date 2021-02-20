@@ -1,28 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    .teste {
-      color: red;
-    }
-  </style>
+  <title>Agenda de tarefas</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/pyb1sra.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-  <form id="task_form">
-    <input type="text" name="task_input" id="task_input">
-    <input type="text" name="date_input" id="date_input" maxlength="10" inputmode="numeric" placeholder="DD/MM/YYYY">
-    <input type="text" name="time_input" id="time_input" maxlength="5" inputmode="numeric" placeholder="HH:MM">
-  </form>
-  <button id="add_task">ADD TASK</button>
-  <button id="show_task_list">SHOW TASK LIST MODEL</button>
-  <button id="task_done">DONE</button>
-  <p id="task_list" style="border: 1px solid black; width: 100%; min-height: 150px;"></p>
 
+  <div id="app">
+    
+    <header class="card">
+      <h1 class="titulo">Adicionar tarefas</h1>
+      <form id="task_form">
+        <input id="task_input" class="task_input" type="text" placeholder="Tarefa">
+        <div class="input_group date">
+          <input id="date_input" type="text" maxlength="10" inputmode="numeric" placeholder="01/01/2000">
+          <span class="material-icons">event</span>
+        </div>
+        <div class="input_group time">
+          <input id="time_input" type="text" maxlength="5" inputmode="numeric" placeholder="00:00">    
+          <span class="material-icons">schedule</span>
+        </div>
+        <button id="add_task" type="submit" disabled>Adicionar</button>
+      </form>
+    </header>
+  
+    <main>
+    <!--  
+    <section class="card">
+      <h2 class="titulo_card">quarta, 21 de janeiro</h2>
+      <ul>
+        <li class="task_group">
+          <label class="task_item hour" for="task-1">09:00</label>
+          <input id="task-1" class="task_item" type="checkbox">
+          <label for="task-1" class="task_item text">Baixar receita de bolo de cenoura</label>
+          <p class="material-icons close_btn task_item">close</p>
+        </li>
+        <li class="task_group">
+          <label class="task_item hour" for="task-2">10:00</label>
+          <input id="task-2" class="task_item" type="checkbox" >
+          <label for="task-2" class="task_item text">Comprar os igredientes da receita</label>
+          <p class="material-icons close_btn task_item">close</p>
+        </li>
+        <li class="task_group">
+          <label class="task_item hour" for="task-3">11:00</label>
+          <input id="task-3" class="task_item" type="checkbox">
+          <label for="task-3" class="task_item text">Fazer bolo de cenoura</label>
+          <p class="material-icons close_btn task_item">close</p>
+        </li>
+        <li class="task_group">
+          <label class="task_item hour" for="task-4">16:00</label>
+          <input id="task-4" class="task_item" type="checkbox" >
+          <label for="task-4" class="task_item text">Comer um bolo de cenoura delícia</label>
+          <p class="material-icons close_btn task_item">close</p>
+        </li>
+      </ul>  
+    </section>
+    -->
+    </main>
+  
+  </div>
+  
   <script src="./src/js/maskDatetime.js"></script>
+  <script src="./src/js/validForm.js"></script>
   <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>

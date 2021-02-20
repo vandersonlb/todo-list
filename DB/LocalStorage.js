@@ -1,7 +1,6 @@
-//"use strict";
+"use strict";
 
 import Task from "../Models/Task.js";
-import DateHelper from "../Helpers/DateHelper.js"
 
 class LocalStorage {
   constructor() {

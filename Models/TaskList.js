@@ -1,4 +1,4 @@
-//"use strict";
+"use strict";
 
 import LocalStorage from "../DB/LocalStorage.js";
 
@@ -13,7 +13,7 @@ class TaskList {
 
   addTask(task) {
     this._taskList.push(task);
-    this._taskList = this._taskList.sort((a,b) => a._date - b._date );
+    this._taskList = this._taskList.sort((a, b) => a._date - b._date);
     this._taskList = this.createTaskID(this._taskList);
     // console.log("Tarefa adicionada na Lista de Tarefas")
   }

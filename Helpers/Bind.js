@@ -1,4 +1,4 @@
-//"use strict";
+"use strict";
 
 import ProxyFactory from "./ProxyFactory.js";
 import LocalStorage from "../DB/LocalStorage.js";
