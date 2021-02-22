@@ -3,12 +3,14 @@
 import Task from "../Models/Task.js";
 import TaskList from "../Models/TaskList.js";
 import TaskView from "../Views/TaskView.js";
+import AlertView from "../Views/AlertView.js";
 import Bind from "../Helpers/Bind.js";
 import DateHelper from "../Helpers/DateHelper.js";
 
 class TaskController {
   constructor() {
     this._taskForm = document.querySelector("#task_form");
+    this._alert = document.querySelector("#alert");
     this._addTaskButton = document.querySelector("#add_task");
 
     this._taskList = new Bind(
@@ -23,12 +25,17 @@ class TaskController {
     let task = this._taskForm.task_input.value;
     let date = this._taskForm.date_input.value;
     let time = this._taskForm.time_input.value;
+    let dateTime = DateHelper.stringToDate(date, time);
 
-    this._taskList.addTask(new Task(task, DateHelper.stringToDate(date, time)));
-    TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]);
+    if (dateTime == "Invalid Date") {
+      AlertView.update(this._alert, "Data ou hora inválida!");
+    } else {
+      this._taskList.addTask(new Task(task, dateTime));
+      TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]);
 
-    this._taskForm.reset();
-    this._addTaskButton.disabled = true;
+      this._taskForm.reset();
+      this._addTaskButton.disabled = true;
+    }
   }
 
   deleteTask(evt) {

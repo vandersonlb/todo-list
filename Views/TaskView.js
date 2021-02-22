@@ -36,7 +36,7 @@ class TaskView {
 
   static createLabel(date) {
     let label = document.createElement("h2");
-    label.classList.add("titulo_card");
+    label.classList.add("titulo", "titulo_card");
     label.innerText = date;
     
     return label;
