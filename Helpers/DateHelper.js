@@ -12,10 +12,6 @@ class DateHelper {
     let hour = time.split(":")[0] <= 23 ? time.split(":")[0] : undefined;
     let minute = time.split(":")[1] <= 59 ? time.split(":")[1] : undefined;
 
-    console.log(day, month, year, hour, minute);
-
-    console.log(new Date(year, month - 1, day, hour, minute));
-
     return new Date(year, month - 1, day, hour, minute);
   }
 }

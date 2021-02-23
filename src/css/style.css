@@ -138,6 +138,15 @@ main {
   opacity: 0.5;
 }
 
+/** BANNER **/
+
+.banner {
+  padding: 0;
+  background-image: url("../../src/img/banner.svg");
+  background-position: center;
+  height: 120px;
+}
+
 /** ALERTS **/
 
 .alert {
