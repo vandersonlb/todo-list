@@ -17,11 +17,11 @@ _Ps.: Qualquer sugestão de melhoria, funcionalidade nova ou crítica em relaç�
 Foi feito uma série de melhorias em relação ao projeto original do curso, sendo elas: 
 
 **Estuturais**
-- Aplicação do do padrão MVC.
-- Persistência dos dados no navegador.
-- Módulos ES6.
+- Aplicação do do padrão MVC
+- Persistência dos dados no navegador
+- Módulos ES6
 
 **Visuais**
-- Agrupamento das tarefas por dia.
+- Agrupamento das tarefas por dia
 - Ordenação das tarefas por data/hora
 - Alerta de erros (ex.: data ou hora incorreta)
