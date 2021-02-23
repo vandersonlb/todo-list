@@ -51,7 +51,7 @@ class TaskView {
         filteredList.push(dateString)
     })
 
-    return filteredList
+    return filteredList.reverse();
   }
 
   static createItem(task, actions) {
