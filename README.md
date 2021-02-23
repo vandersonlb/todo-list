@@ -17,7 +17,7 @@ _Ps.: Qualquer sugestão de melhoria, funcionalidade nova ou crítica em relaç�
 Foi feito uma série de melhorias em relação ao projeto original do curso, sendo elas: 
 
 **Estuturais**
-- Aplicação do do padrão MVC
+- Aplicação do padrão MVC
 - Persistência dos dados no navegador
 - Módulos ES6
 

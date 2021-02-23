@@ -5,7 +5,7 @@ import LocalStorage from "../DB/LocalStorage.js";
 
 export class Bind {
   constructor(model, view, actions, ...props) {
-    let proxy = ProxyFactory.create(model, props, function () {
+    const proxy = ProxyFactory.create(model, props, function () {
       view.update(model.getList, actions);
       LocalStorage.refreshDB(model.getList);
     });

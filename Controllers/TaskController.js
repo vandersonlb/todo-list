@@ -22,34 +22,35 @@ class TaskController {
   }
 
   addTask() {
-    let task = this._taskForm.task_input.value;
-    let date = this._taskForm.date_input.value;
-    let time = this._taskForm.time_input.value;
-    let dateTime = DateHelper.stringToDate(date, time);
+    const task = this._taskForm.task_input.value;
+    const date = this._taskForm.date_input.value;
+    const time = this._taskForm.time_input.value;
+    const dateTime = DateHelper.stringToDate(date, time);
 
     if (dateTime == "Invalid Date") {
       AlertView.update(this._alert, "Data ou hora inválida!");
-    } else {
-      this._taskList.addTask(new Task(task, dateTime));
-      TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]);
+      return
+    } 
 
-      this._taskForm.reset();
-      this._addTaskButton.disabled = true;
-    }
+    this._taskList.addTask(new Task(task, dateTime));
+    TaskView.update(this._taskList.getList, [this.deleteTask, this.taskDone]);
+
+    this._taskForm.reset();
+    this._addTaskButton.disabled = true;
   }
 
   deleteTask(evt) {
-    let id = evt.target.parentNode.id;
+    const id = evt.target.parentNode.id;
     taskController._taskList.deleteTask(id);
   }
 
   taskDone(evt) {
-    let id = evt.target.parentNode.id;
+    const id = evt.target.parentNode.id;
     taskController._taskList.taskDone(id);
   }
 }
 
-let taskController = new TaskController();
+const taskController = new TaskController();
 
 export function currentInstance() {
   return taskController;

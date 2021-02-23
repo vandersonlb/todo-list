@@ -15,18 +15,15 @@ class TaskList {
     this._taskList.push(task);
     this._taskList = this._taskList.sort((a, b) => a._date - b._date);
     this._taskList = this.createTaskID(this._taskList);
-    // console.log("Tarefa adicionada na Lista de Tarefas")
   }
 
   deleteTask(id) {
     this._taskList.splice(id, 1);
     this._taskList = this.createTaskID(this._taskList);
-    // console.log(`Tarefa ID ${id} removida da Lista de Tarefas`)
   }
 
   taskDone(id) {
     this._taskList[id].done = !this._taskList[id].done;
-    // console.log("Status da tarefa modificado")
   }
 
   createTaskID(list) {

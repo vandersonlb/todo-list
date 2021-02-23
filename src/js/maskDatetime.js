@@ -1,4 +1,4 @@
-let dateInput = document.querySelector("#date_input");
+const dateInput = document.querySelector("#date_input");
 dateInput.addEventListener("input", (evt) => {
   if (/\D/.test(evt.data) && evt.data)
     dateInput.value = dateInput.value.slice(0, -1);
@@ -8,7 +8,7 @@ dateInput.addEventListener("input", (evt) => {
   }
 });
 
-let timeInput = document.querySelector("#time_input");
+const timeInput = document.querySelector("#time_input");
 timeInput.addEventListener("input", (evt) => {
   if (/\D/.test(evt.data) && evt.data) 
     timeInput.value = timeInput.value.slice(0, -1);

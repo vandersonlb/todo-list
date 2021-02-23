@@ -8,7 +8,7 @@ class LocalStorage {
   }
 
   static getTaskDB() {
-    let actualDB = JSON.parse(localStorage.getItem("tasksDB")) || [];
+    const actualDB = JSON.parse(localStorage.getItem("tasksDB")) || [];
     return actualDB.map((task) => new Task(task._name, new Date(task._date), task._id, task._done));
   }
 

@@ -6,11 +6,11 @@ class DateHelper {
   }
 
   static stringToDate(date, time) {
-    let day = date.split("/")[0] <= 31 ? date.split("/")[0] : undefined ;
-    let month = date.split("/")[1] <= 12 ? date.split("/")[1] : undefined;
-    let year = date.split("/")[2];
-    let hour = time.split(":")[0] <= 23 ? time.split(":")[0] : undefined;
-    let minute = time.split(":")[1] <= 59 ? time.split(":")[1] : undefined;
+    const day = date.split("/")[0] <= 31 ? date.split("/")[0] : undefined ;
+    const month = date.split("/")[1] <= 12 ? date.split("/")[1] : undefined;
+    const year = date.split("/")[2];
+    const hour = time.split(":")[0] <= 23 ? time.split(":")[0] : undefined;
+    const minute = time.split(":")[1] <= 59 ? time.split(":")[1] : undefined;
 
     return new Date(year, month - 1, day, hour, minute);
   }
