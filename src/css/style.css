@@ -42,7 +42,9 @@ body {
 }
 
 #app {
+  position: relative;
   width: 26.25rem;
+  min-height: calc(100vh - 3rem);
   margin: 0 auto;
 }
 
@@ -237,8 +239,38 @@ input:checked[type="checkbox"] {
   font-size: 0.7rem;
 }
 
+/** FOOTER **/
+
+footer {
+  position: absolute;
+  opacity: 0.9;
+  width: 26.25rem;
+  bottom: -30px;
+  text-align: center;
+}
+
+footer a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  background-image: url("../../src/img/github_mark_small.svg");
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  transform: translateX(-20px);
+}
+
 @media only screen and (max-width: 450px) {
   #app {
+    width: 100%;
+  }
+
+  footer {
     width: 100%;
   }
 
