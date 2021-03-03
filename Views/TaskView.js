@@ -31,7 +31,9 @@ class TaskView {
       
       container.appendChild(card);
     })
-
+    
+    document.querySelector('#task_input').focus();
+    console.log(document.forms.task_form);
   }
 
   static createLabel(date) {
