@@ -8,7 +8,7 @@ Esta é uma aplicação para gerenciamento de tarefas, desenvolvida em HTML, CSS
 
 Você pode uar a **Agenda de Tarefas** nesse [link](https://vandersonlb.github.io/todo-list/).
 
-### 💻 Atualizações fev/2021
+### 🚀 Atualizações fev/2021
 
 Foi feito uma série de melhorias em relação ao projeto original:
 
