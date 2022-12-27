@@ -34,6 +34,7 @@ ol, ul {
 html {
   font-family: "myriad-pro", sans-serif;
   color: var(--text-color);
+  font-size: 18px;
 }
 
 body {
@@ -144,9 +145,9 @@ main {
 
 .banner {
   padding: 0;
-  background-image: url("../../src/img/banner.svg");
-  background-position: center;
-  height: 7.5rem
+  background: #F2E8E1 url("../../src/img/banner.svg") no-repeat center center;
+  background-size: contain;
+  height: 9rem;
 }
 
 /** ALERTS **/
@@ -260,7 +261,7 @@ footer::before {
   background-image: url("../../src/img/github_mark_small.svg");
   width: 1rem;
   height: 1rem;
-  top: 0.2rem;
+  top: 0.05rem;
   transform: translateX(-1.25rem);
 }
 
