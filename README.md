@@ -1,4 +1,4 @@
-<img src="https://github.com/vandersonlb/todo-list/blob/master/src/img/banner.svg" width="100%" alt="Agenda de tarefas"/>
+<img src="https://github.com/vandersonlb/todo-list/blob/main/src/img/banner.svg" width="100%" alt="Agenda de tarefas"/>
 
 > Agenda do tipo TO-DO List, organizadora de tarefas.
 
