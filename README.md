@@ -1,27 +1,23 @@
-<h1> <img src="https://github.com/vandersonlb/todo-list/blob/gh-pages/src/img/banner.svg" width="100%" alt="Agenda de tarefas"/> </h1>
+<img src="https://github.com/vandersonlb/todo-list/blob/master/src/img/banner.svg" width="100%" alt="Agenda de tarefas"/>
 
-# Agenda de tarefas
-(Projeto do curso **JavaScript antes de Framework**)<br>
+> Agenda do tipo TO-DO List, organizadora de tarefas.
 
-Esse projeto é uma aplicação web simples para controle de tarefas, com o objetivo de colocar em prática o conteúdo aprendido até o momento.<br>
-O desenvolvimento do site foi feito com HTML, CSS e Javascript puro e o layout foi feito utilizando o Illustrator e o Adobe XD.<br><br>
+# Agenda de Tarefas
 
-Você pode usar a **Agenda de tarefas** nesse [link](https://vandersonlb.github.io/todo-list/).<br><br>
+Esta é uma aplicação para gerenciamento de tarefas, desenvolvida em HTML, CSS e JS vanilla, usando o padrão MVC, com persistência de dados no navegador. O objetivo é praticar um pouco o conteúdo de front-end aprendido até o momento.
 
-_Ps.: Qualquer sugestão de melhoria, funcionalidade nova ou crítica em relação ao projeto será muito bem vinda._
+Você pode uar a **Agenda de Tarefas** nesse [link](https://vandersonlb.github.io/todo-list/).
 
-***
+### 💻 Atualizações fev/2021
 
-## Atualização de fevereiro/2021
+Foi feito uma série de melhorias em relação ao projeto original:
 
-Foi feito uma série de melhorias em relação ao projeto original do curso, sendo elas: 
+- [x] Aplicação do padrão MVC
+- [x] Persistência dos dados no navegador
+- [x] Módulos ES6
+- [x] Agrupamento das tarefas por dia
+- [x] Ordenação das tarefas por data/hora
+- [x] Alerta de erros (ex.: data ou hora incorreta)
+<br>
 
-**Estuturais**
-- Aplicação do padrão MVC
-- Persistência dos dados no navegador
-- Módulos ES6
-
-**Visuais**
-- Agrupamento das tarefas por dia
-- Ordenação das tarefas por data/hora
-- Alerta de erros (ex.: data ou hora incorreta)
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /> <img src="https://img.shields.io/badge/Javascript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
