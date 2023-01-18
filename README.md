@@ -6,7 +6,7 @@
 
 Esta é uma aplicação para gerenciamento de tarefas, desenvolvida em HTML, CSS e JS vanilla, usando o padrão MVC, com persistência de dados no navegador. O objetivo é praticar um pouco o conteúdo de front-end aprendido até o momento.
 
-Você pode uar a **Agenda de Tarefas** nesse [link](https://vandersonlb.github.io/todo-list/).
+Você pode usar a **Agenda de Tarefas** nesse [link](https://vandersonlb.github.io/todo-list/).
 
 ### 🚀 Atualizações fev/2021
 
